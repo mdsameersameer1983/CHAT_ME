@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="A friendly AI assistant for questions, writing, planning, and ideas.">
+  <title>Chat Me — your AI assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Chat Me home"><span class="brand-mark">✳</span><span>chat<span class="brand-light"> me</span></span></a>
+      <button class="new-chat" id="clear-chat" type="button"><span>＋</span> New chat</button>
+      <div class="side-caption">YOUR AI SPACE</div>
+      <div class="side-item active"><span class="side-icon">◌</span> New conversation</div>
+      <div class="side-note"><span class="sparkle">✦</span><p><strong>A little help goes a long way.</strong><br>Ask anything. Think things through.</p></div>
+      <div class="sidebar-footer"><span class="avatar small">S</span><span>Made for curious minds</span><span class="online-dot"></span></div>
+    </aside>
+
+    <section class="main-panel">
+      <header class="topbar"><div class="mobile-brand"><span class="brand-mark">✳</span> Chat Me</div><div class="session-label"><span class="online-dot"></span> Your AI assistant</div><button class="clear-button" id="clear-chat-top" type="button" title="Clear conversation" aria-label="Clear conversation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/></svg><span>Clear chat</span></button></header>
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orbit"><span>✳</span><i class="orbit-dot"></i></div>
+          <div class="eyebrow">YOUR FRIENDLY AI ASSISTANT</div>
+          <h1>Hello, <em>there.</em></h1>
+          <p class="welcome-copy">I’m Chat Me. What can I help you with today?</p>
+          <div class="suggestions">
+            <button class="suggestion" type="button" data-prompt="Explain quantum computing in simple terms"><span class="suggestion-icon mint">🌱</span><span><b>Explain something</b><small>Get a clear, simple explanation</small></span><span class="arrow">↗</span></button>
+            <button class="suggestion" type="button" data-prompt="Help me write a friendly email to reschedule a meeting"><span class="suggestion-icon peach">✎</span><span><b>Write something</b><small>Draft, polish, or rewrite</small></span><span class="arrow">↗</span></button>
+            <button class="suggestion" type="button" data-prompt="Give me creative ideas for a weekend project"><span class="suggestion-icon lilac">◷</span><span><b>Brainstorm ideas</b><small>Explore a few fresh directions</small></span><span class="arrow">↗</span></button>
+            <button class="suggestion" type="button" data-prompt="Help me plan a productive day with time for breaks"><span class="suggestion-icon butter">∑</span><span><b>Make a plan</b><small>Turn a goal into clear next steps</small></span><span class="arrow">↗</span></button>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+      <div class="composer-wrap"><form class="composer" id="chat-form"><textarea id="message-input" rows="1" maxlength="4000" placeholder="Message Chat Me…" aria-label="Your message"></textarea><div class="composer-bottom"><span class="input-hint"><span class="hint-sparkle">✦</span> Here to help you think</span><div class="composer-actions"><button class="voice-button" id="voice-toggle" type="button" aria-pressed="true" title="Turn spoken replies off">Voice on</button><button class="mic-button" id="mic-button" type="button" aria-label="Start voice input" title="Speak your question"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3m-4 0h8"/></svg></button><button class="send-button" id="send-button" type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg></button></div></div></form><div class="voice-status" id="voice-status" role="status" aria-live="polite">Tap the microphone to speak to Chat Me. Spoken replies are on.</div><div class="disclaimer">Chat Me can make mistakes. Double-check important information.</div></div>
+    </section>
+  </main>
+  <template id="message-template"><article class="message"><div class="message-avatar"></div><div class="message-content"><div class="message-name"></div><div class="message-bubble"></div></div></article></template>
+</body>
+</html>
+
+
+
+
+
